@@ -94,10 +94,6 @@ def generate_response(input_data, sentences, tokenizer, model, output_dir = "hid
                 temp_result[(ri,d2)] = response_text
                 last_input_token_hidden = last_input_token_hiddens[i].cpu().numpy()
                 print(response_text)
-                #temp_length.append(input_len)
-                #temp_result.append(response_text)
-                #temp_hidden.append(last_input_token_hidden.cpu().numpy())
-
                 fname = os.path.join(output_dir, f"%s_%s.pkl" % (ri, str(d2).zfill(5)))
                 pickle.dump(
                     {"length": input_len,
@@ -105,7 +101,6 @@ def generate_response(input_data, sentences, tokenizer, model, output_dir = "hid
                      "last_hidden": last_input_token_hidden},
                     open(fname, "wb")
                 )
-
             max_input_length = 0
             
 def seed_everything(seed: int):
