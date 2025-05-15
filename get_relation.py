@@ -58,7 +58,7 @@ def run():
     parser = ArgumentParser()
     parser.add_argument("--num_data", type=int, default=500)
     parser.add_argument("--num_rounds", type=int, default=5)
-    parser.add_argument("--output_dir", type=str, default="Negative1_hidden_states")
+    parser.add_argument("--output_dir", type=str, default="Negative_hidden_states")
     args = parser.parse_args()
 
     length, result, last_hidden = parse_hidden_states(args.num_data, args.num_rounds, args.output_dir)
