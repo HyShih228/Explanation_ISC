@@ -50,6 +50,7 @@ def calculate_innerscore(list,condition,toporsmall,num = 100):
             score = score + inner*toxic
         output.append(score)
         score = 0
+    print(f"({toporsmall}_{num}) inner_score of {condition} prompt is {output}")
     return output
 
 def run():
