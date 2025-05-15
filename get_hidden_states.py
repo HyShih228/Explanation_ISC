@@ -87,7 +87,6 @@ def generate_response(input_data, sentences, tokenizer, model, output_dir = "hid
                             )
 
             generated_tokens = generate_outputs.sequences[:,input_len:]
-            # print(generated_tokens)
 
             for d2, i in zip(dialog_ids_temp, range(generated_tokens.shape[0])):
                 response_text = tokenizer.decode(generated_tokens[i], skip_special_tokens=True)
