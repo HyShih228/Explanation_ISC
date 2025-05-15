@@ -25,9 +25,7 @@ def inner_product_unembed_diff(nopca_difference):
     for data in nopca_difference:
         temp_inners = []
         for diffround in  data:
-            # print(f"shape of unembedding={self.unembedding.shape}")
             difference_tensor = torch.tensor(diffround, dtype=unembedding.dtype, device=unembedding.device)
-            # print(f"shape of difference = {len(difference_tensor)}")
             temp_inner = unembedding @ difference_tensor
             temp_inners.append(temp_inner.detach().cpu().numpy())
         inner.append(temp_inners)
