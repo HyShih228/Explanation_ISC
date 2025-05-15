@@ -4,8 +4,8 @@ We provide an explanation of how a large language model (LLM) responds to instru
 ## Requirement
 
 ## Experiments
-- get_hidden_states.py
-- get_pca_results.py
-### get_relation.py
-### rounds_toxic.py
-### utils.py
+- get_hidden_states.py: Extracts the input length, generated response, and hidden states from the LLM.
+- get_pca_results.py: Visualizes the differences in hidden states across rounds, corresponding to Figure 2.
+- get_relation.py: Computes the inner product between the hidden state differences and the unembedding matrix across rounds, corresponding to Table 2.
+- rounds_toxic.py: Sends generated responses to the AWS Perspective API to obtain toxicity scores, corresponding to Table 1 and Figure 1.
+- utils.py: Contains parse_hidden_states functions for recording input lengths, responses, and hidden states from the LLM.
