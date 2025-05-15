@@ -29,7 +29,7 @@ def inner_product_unembed_diff(nopca_difference):
             temp_inner = unembedding @ difference_tensor
             temp_inners.append(temp_inner.detach().cpu().numpy())
         inner.append(temp_inners)
-    return np.stack(inner) #np.array(inner)
+    return np.stack(inner) 
 
 def average_diff(inner):
     inner_ave = []
@@ -38,7 +38,7 @@ def average_diff(inner):
         for data in range(inner.shape[0]):
             temp_inner += inner[data][round]
         inner_ave.append(temp_inner/inner.shape[0])
-    return np.stack(inner_ave) #np.array(inner_ave)
+    return np.stack(inner_ave) 
 
 def calculate_innerscore(list,condition,toporsmall,num = 100):
     score = 0
