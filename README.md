@@ -4,8 +4,8 @@ We provide an explanation of how a large language model (LLM) responds to instru
 ## Requirement
 
 ## Experiments
-### get_hidden_states.py
-### get_pca_results.py
+- get_hidden_states.py
+- get_pca_results.py
 ### get_relation.py
 ### rounds_toxic.py
 ### utils.py
