@@ -52,7 +52,6 @@ def get_all_scores(Output,num_rounds,output_dir):
         print("round ", round)
         print("\n")
         temp_record = []
-        # run through each ans[round] and get toxicity_score to average 
         for text in Output:
             print(f"text[round] = {text[round]}")
             toxicity_score = get_toxicity(text[round])
@@ -60,7 +59,7 @@ def get_all_scores(Output,num_rounds,output_dir):
         toxicity.append(temp_record)
         print(toxicity)
 
-    toxicity_T = list(map(list, zip(*toxicity)))  # shape: (num_samples, num_rounds)
+    toxicity_T = list(map(list, zip(*toxicity))) 
 
     with open(os.path.join(output_dir,'toxicity.csv'), 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
@@ -123,8 +122,6 @@ def run():
                     Toxicity[r].append(row[r]) 
         for i in range(0,args.num_rounds):
             Toxicity[i] = Toxicity[i][:args.num_data]    
-
-        print(Toxicity)
     else:
         Toxicity = get_all_scores(result,args.num_rounds,args.output_dir)
     
