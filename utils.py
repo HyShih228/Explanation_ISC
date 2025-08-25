@@ -7,6 +7,7 @@ def parse_hidden_states(num_data, num_rounds, output_dir = "hidden_states"):
     length = []
     result = []
     last_hidden = []
+    last_hidden_mean = []
 
     for d in range(num_data):
         length_temp =[]
@@ -21,5 +22,8 @@ def parse_hidden_states(num_data, num_rounds, output_dir = "hidden_states"):
         length.append(length_temp)
         result.append(result_temp)
         last_hidden.append(last_hidden_temp)
+        
+    last_hidden = np.array(last_hidden)
+    last_hidden_mean = np.mean(last_hidden, axis=0)
 
-    return np.array(length), result, np.array(last_hidden)
+    return np.array(length), result, last_hidden, last_hidden_mean
