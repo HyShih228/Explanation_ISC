@@ -12,4 +12,5 @@ You need to install Python packages torch, transformers, scikit-learn, random, n
 - utils.py: Contains parse_hidden_states functions for recording input lengths, responses, and hidden states from the LLM.
 - get_steering_vectors.py: to get the steering vector of "Nontoxic" - "toxic"
 - test_steering_vector.py: use to test the effect of steering vector that we found on toxicity.
+- analyze_vectors.py: Use to analyze the similarity of the steering vector and our (average) difference vector.  
   
