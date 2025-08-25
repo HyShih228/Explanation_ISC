@@ -10,3 +10,5 @@ You need to install Python packages torch, transformers, scikit-learn, random, n
 - get_relation.py: Computes the inner product between the hidden state differences and the unembedding matrix across rounds, corresponding to Table 2.
 - rounds_toxic.py: Sends generated responses to the AWS Perspective API to obtain toxicity scores, corresponding to Table 1 and Figure 1.
 - utils.py: Contains parse_hidden_states functions for recording input lengths, responses, and hidden states from the LLM.
+- test_steering_vector.py: use to test the effect of steering vector that we found on toxicity.
+  
