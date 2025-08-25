@@ -135,7 +135,7 @@ def run():
         print("PCA saved.")
 
     # Positive
-    length1, result1, last_hidden1 = parse_hidden_states(args.num_data, args.num_rounds, args.output_dir1)
+    length1, result1, last_hidden1, last_hidden_mean1 = parse_hidden_states(args.num_data, args.num_rounds, args.output_dir1)
     pca_results1 = pca_process(pca,last_hidden1,0)
     diff1 = pca_results1[:,1:,:] - pca_results1[:,:-1,:]
     diff1 = diff1.transpose((1,0,2))
@@ -145,7 +145,7 @@ def run():
     plot_3dim_vector(diff1 ,"Positive(rank = 3)", args.output_dir1, k=3)
 
     # Negative
-    length2, result2, last_hidden2 = parse_hidden_states(args.num_data, args.num_rounds, args.output_dir2)
+    length2, result2, last_hidden2, last_hidden_mean2 = parse_hidden_states(args.num_data, args.num_rounds, args.output_dir2)
     pca_results2 = pca_process(pca,last_hidden2,1)
     diff2 = pca_results2[:,1:,:] - pca_results2[:,:-1,:]
     diff2 = diff2.transpose((1,0,2))
